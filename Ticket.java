@@ -27,7 +27,7 @@ public class Ticket {
         System.out.println("3. Bus              Rp 190.000");
         System.out.println("3. Air Space        Rp 1.333.999");
         System.out.println("");
-        while(i = 6){
+        while(i = tiket{
         
         i = scan.nextInt();
         if(i == tiket) System.out.println("Terimakasih");
