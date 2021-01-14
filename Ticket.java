@@ -18,7 +18,7 @@ public class Ticket {
         int no ;
         int harga;
         int i;
-//        menampilkan menu makanan
+//        menampilkan menu 
         System.out.println("Ticket : ");
         System.out.println("________________________________");
         System.out.println("No Nama             Harga");
