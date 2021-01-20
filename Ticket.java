@@ -12,19 +12,19 @@ import java.util.Scanner;
  * @author LENOVO
  */
 public class Ticket {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Transportation order = new Transportation();//terkoneksi dengan transportation
+        Transportation order = new Transportation();
         double biaya = 0;
         double diskon = 0;
         int max;
         int min;
 
-//       diskon aturan 2
+//      diskon aturan 2
         System.out.print("Masukkan nama anda: ");
         String nama = in.nextLine();
         int jumlah = 0;
-        String namaKendaraan = order.pesawat.getKendaraan()//terkoneksi dgn class transportation
+        String namaKendaraan = order.pesawat.getKendaraan()
                 + order.keretaApi.getKendaraan()
                 + order.bus.getKendaraan()
                 + order.airSpace.getKendaraan();
@@ -42,7 +42,7 @@ public class Ticket {
             }
         }
 
-//       diskon  aturan 1        
+//     diskon aturan 1        
         System.out.println("Pukul berapa anda memesan tiket ini? (HH:MM)");
         String[] pukul = in.nextLine().split(":");
         int jam = Integer.parseInt(pukul[0]);
@@ -90,7 +90,7 @@ public class Ticket {
             }
         }
 
-        System.out.println("Pilih kendaraan: (int 1 character)" + "\n1. Pesawat" + "\n2. Kereta Api" + "\n3. Bus" + "\n4. Air Space");
+        System.out.println("Pilih kendaraan:" + "\n1. Pesawat" + "\n2. Kereta Api" + "\n3. Bus" + "\n4. Air Space");
         loop = true;
         while (loop) {
             int input = in.nextInt();
@@ -115,7 +115,7 @@ public class Ticket {
                     System.out.println("Try again");
             }
         }
-        //cetak tiket
+        
         System.out.println("\n=================== Tiket ===================");
         System.out.printf("%-40s %s\n", "Nama", ": " + nama);
         System.out.printf("%-40s %s\n", "Kota tujuan", ": " + tujuan);
