@@ -14,21 +14,21 @@ public class Transportation {
     ModelTicket keretaApi;
     ModelTicket bus;
     ModelTicket airSpace; 
-    public Transportation (){
+    public void Transportation (){
         pesawat = new ModelTicket();//memanggil set pada class modelTicket          ; 
-        pesawat.setKendaraan("Pesawat");
-        pesawat.setHarga(585000);
+        pesawat.setTransportation("Pesawat");
+        pesawat.setPrice(585000);
         
         keretaApi = new ModelTicket();
-        keretaApi.setKendaraan("Kereta Api");
-        keretaApi.setHarga(332000);
+        keretaApi.setTransportation("Kereta Api");
+        keretaApi.setPrice(332000);
         
         bus = new ModelTicket();
-        bus.setKendaraan("Bus");
-        bus.setHarga(190000);
+        bus.setTransportation("Bus");
+        bus.setPrice(190000);
         
         airSpace = new ModelTicket();
-        airSpace.setKendaraan("Air Space");
-        airSpace.setHarga(1333999);
+        airSpace.setTransportation("Air Space");
+        airSpace.setPrice(1333999);
     }
 }

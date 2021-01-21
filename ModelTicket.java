@@ -11,18 +11,18 @@ package newpackage;
  */
        
    public class ModelTicket {
-    private String kendaraan;
-    private int harga;
-    public void setKendaraan(String kendaraan){
-        this.kendaraan = kendaraan;
+    private String Transportation;
+    private int Price;
+    public void setTransportation(String Transportation){
+        this.Transportation = Transportation;
     }
-    public String getKendaraan(){
-        return kendaraan;
+    public String getTransportation(){
+        return Transportation;
     }
-    public void setHarga(int harga){
-        this.harga = harga;
+    public void setPrice(int Price){
+        this.Price = Price;
     }
-    public int getHarga(){
-        return harga;
+    public int getPrice(){
+        return Price;
     } 
 }

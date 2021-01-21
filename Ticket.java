@@ -15,19 +15,19 @@ public class Ticket {
      public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Transportation order = new Transportation();
-        double biaya = 0;
-        double diskon = 0;
+        double payment = 0;
+        double discount = 0;
         int max;
         int min;
 
 //      diskon aturan 2
-        System.out.print("Masukkan nama anda: ");
+        System.out.print("Masukkan Nama : ");
         String nama = in.nextLine();
         int jumlah = 0;
-        String namaKendaraan = order.pesawat.getKendaraan()
-                + order.keretaApi.getKendaraan()
-                + order.bus.getKendaraan()
-                + order.airSpace.getKendaraan();
+        String namaKendaraan = order.pesawat.getTransportation()
+                + order.keretaApi.getTransportation()
+                + order.bus.getTransportation()
+                + order.airSpace.getTransportation();
         for (int i = 0; i < nama.length(); i++) {
             if (nama.charAt(i) != ' ') {
                 jumlah++;
@@ -36,7 +36,7 @@ public class Ticket {
         if (jumlah > 10) {
             for (int i = 0; i < nama.length(); i++) {
                 if (namaKendaraan.toLowerCase().contains(nama.toLowerCase().split("")[i])) {
-                    diskon += 1;
+                    discount += 1;
                     break;
                 }
             }
@@ -50,39 +50,39 @@ public class Ticket {
         if ((jam == 8 && menit <= 59 && menit >= 0) || (jam == 9 && menit == 0)) {
             max = 2;
             min = 1;
-            diskon += (int)((Math.random() * ((max + 1) - min)) + min);
+            discount += (int)((Math.random() * ((max + 1) - min)) + min);
         }
 
 //       diskon aturan 3
         System.out.println("Pilih kota tujuan:" + "\n1. Jakarta" + "\n2. Amerika" + "\n3. Bandung");
-        int jarak = 0;
-        String tujuan = "";
+        int distance = 0;
+        String location = "";
         boolean loop = true;
         while (loop) {
             int input = in.nextInt();
             switch (input) {
                 case 1:
-                    tujuan = "Jakarta";
+                    location = "Jakarta";
                     max = 900;
                     min = 800;
-                    jarak += (int) ((Math.random() * ((max + 1) - min)) + min);
-                    diskon += 4;
+                    distance += (int) ((Math.random() * ((max + 1) - min)) + min);
+                    discount += 4;
                     loop = false;
                     break;
                 case 2:
-                    tujuan = "Amerika";
+                    location = "Amerika";
                     max = 2000;
                     min = 1500;
-                    jarak += (int) ((Math.random() * ((max + 1) - min)) + min);
-                    diskon += 6;
+                    distance += (int) ((Math.random() * ((max + 1) - min)) + min);
+                    discount += 6;
                     loop = false;
                     break;
                 case 3:
-                    tujuan = "Bandung";
+                    location = "Bandung";
                     max = 600;
                     min = 500;
-                    jarak += (int) ((Math.random() * ((max + 1) - min)) + min);
-                    diskon += 8;
+                    distance += (int) ((Math.random() * ((max + 1) - min)) + min);
+                    discount += 8;
                     loop = false;
                     break;
                 default:
@@ -96,19 +96,19 @@ public class Ticket {
             int input = in.nextInt();
             switch (input) {
                 case 1:
-                    biaya += order.pesawat.getHarga();
+                    payment += order.pesawat.getPrice();
                     loop = false;
                     break;
                 case 2:
-                    biaya += order.keretaApi.getHarga();
+                    payment += order.keretaApi.getPrice();
                     loop = false;
                     break;
                 case 3:
-                    biaya += order.bus.getHarga();
+                    payment += order.bus.getPrice();
                     loop = false;
                     break;
                 case 4:
-                    biaya += order.airSpace.getHarga();
+                    payment += order.airSpace.getPrice();
                     loop = false;
                     break;
                 default:
@@ -117,11 +117,11 @@ public class Ticket {
         }
         
         System.out.println("\n=================== Tiket ===================");
-        System.out.printf("%-40s %s\n", "Nama", ": " + nama);
-        System.out.printf("%-40s %s\n", "Kota tujuan", ": " + tujuan);
-        System.out.printf("%-40s %s\n", "Jarak antara Surabaya ke " + tujuan, ": " + jarak);
-        System.out.printf("%-40s %s\n", "Total diskon", ": " + diskon);
-        System.out.printf("%-40s %s\n", "Biaya sebelum diskon", ": " + biaya);
-        System.out.printf("%-40s %s\n", "Biaya total", ": " + (biaya - (biaya*(diskon/100))));
+        System.out.printf("%-40s %s\n", "Name", ": " + nama);
+        System.out.printf("%-40s %s\n", "Location", ": " + location);
+        System.out.printf("%-40s %s\n", "Distance " + location, ": " + distance);
+        System.out.printf("%-40s %s\n", "Discount Total", ": " + discount);
+        System.out.printf("%-40s %s\n", "Payment", ": " + payment);
+        System.out.printf("%-40s %s\n", "Payment Total", ": " + (payment - (payment*(discount/100))));
     }
 }
